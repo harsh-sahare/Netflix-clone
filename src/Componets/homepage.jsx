@@ -5,6 +5,7 @@ import NetflixOrignals from "./netflix_orignals";
 import { Context } from "./datalayer";
 import { urls } from "./urls";
 import axios from "axios";
+import BannerGradient from "./banner_gradient";
 
 export default function Homepage() {
   const [state, dispatch] = useContext(Context);
@@ -30,21 +31,29 @@ export default function Homepage() {
 
     getData();
   }, []);
+
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
+
   return (
     <>
       <Navbar />
       <Banner />
-      <NetflixOrignals
-        title="Netflix Orignals"
-        albums={state.NetFlix_orignals}
-      />
-      <NetflixOrignals title="Trending" albums={state.Trending} />
-      <NetflixOrignals title="Top Rated" albums={state.Top_rated} />
-      <NetflixOrignals title="Action Movies" albums={state.Action_movies} />
-      <NetflixOrignals title="Comedy Movies" albums={state.Comedy_movies} />
-      <NetflixOrignals title="Horrer Movies" albums={state.Horrer_movies} />
-      <NetflixOrignals title="Romance Movies" albums={state.Romance_movies} />
-      <NetflixOrignals title="Documentaries" albums={state.Documentaries} />
+      <BannerGradient />
+      <div className="movies">
+        <NetflixOrignals
+          title="Netflix Orignals"
+          albums={state.NetFlix_orignals}
+        />
+        <NetflixOrignals title="Trending" albums={state.Trending} />
+        <NetflixOrignals title="Top Rated" albums={state.Top_rated} />
+        <NetflixOrignals title="Action Movies" albums={state.Action_movies} />
+        <NetflixOrignals title="Comedy Movies" albums={state.Comedy_movies} />
+        <NetflixOrignals title="Horrer Movies" albums={state.Horrer_movies} />
+        <NetflixOrignals title="Romance Movies" albums={state.Romance_movies} />
+        <NetflixOrignals title="Documentaries" albums={state.Documentaries} />
+      </div>
     </>
   );
 }

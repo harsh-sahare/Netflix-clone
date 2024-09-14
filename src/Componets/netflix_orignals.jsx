@@ -13,7 +13,7 @@ export default function NetflixOrignals(attr) {
     switch (title) {
       case "Netflix Orignals":
         Axios.get(urls.tv_trailer.replace("movie_id", item["id"])).then(
-          responce => {
+          (responce) => {
             const results = responce.data["results"];
             console.log(results[results.length - 1]["key"]);
             set_trailer_src(
@@ -26,20 +26,20 @@ export default function NetflixOrignals(attr) {
         break;
       case "Trending":
         if (item["media_type"] == "movie") {
-          Axios.get(
-            urls.movie_trailer.replace("movie_id", item["id"])
-          ).then(responce => {
-            const results = responce.data["results"];
-            console.log(results[results.length - 1]["key"]);
-            set_trailer_src(
-              `https://www.youtube.com/embed/${
-                results[results.length - 1]["key"]
-              }?rel=0&autoplay=1&modestbranding=1`
-            );
-          });
+          Axios.get(urls.movie_trailer.replace("movie_id", item["id"])).then(
+            (responce) => {
+              const results = responce.data["results"];
+              console.log(results[results.length - 1]["key"]);
+              set_trailer_src(
+                `https://www.youtube.com/embed/${
+                  results[results.length - 1]["key"]
+                }?rel=0&autoplay=1&modestbranding=1`
+              );
+            }
+          );
         } else {
           Axios.get(urls.tv_trailer.replace("movie_id", item["id"])).then(
-            responce => {
+            (responce) => {
               const results = responce.data["results"];
               console.log(results[results.length - 1]["key"]);
               set_trailer_src(
@@ -53,7 +53,7 @@ export default function NetflixOrignals(attr) {
         break;
       default:
         Axios.get(urls.movie_trailer.replace("movie_id", item["id"])).then(
-          responce => {
+          (responce) => {
             const results = responce.data["results"];
             console.log(results[results.length - 1]["key"]);
             set_trailer_src(
@@ -77,13 +77,13 @@ export default function NetflixOrignals(attr) {
       </div>
       {attr.albums == "" ? (
         <div className="card_container ">
-          {itmes_20.map(x => {
+          {itmes_20.map((x) => {
             return <div className="card_img background-img"></div>;
           })}
         </div>
       ) : (
         <div className="card_container">
-          {attr.albums.map(item => (
+          {attr.albums.map((item) => (
             <div
               className={`card_img ${
                 attr.title == "Netflix Orignals" ? "netflix-orignal" : ""

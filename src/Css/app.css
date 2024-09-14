@@ -1,0 +1,10 @@
+:root {
+    --width: 85%;
+    --backgroundColor: black
+}
+
+.App {
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

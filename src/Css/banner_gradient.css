@@ -1,0 +1,8 @@
+.bannerGradient {
+    width: 100%;
+    position: relative;
+    z-index: 500;
+    height: 25vh;
+    margin-bottom: -20px;
+    background: linear-gradient(transparent, black);
+}

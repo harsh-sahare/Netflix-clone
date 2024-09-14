@@ -28,21 +28,23 @@ export default function Banner() {
     <>
       {pass === true ? (
         <div className="banner">
-          <img
-            src={`${urls.base_imge_path}${state[selected_genera][random_num]["backdrop_path"]}`}
-            alt={state[selected_genera][random_num]["title"] + " img"}
-            className="banner-img"
-          />
-          <div className="overlay-text">
-            <div className="banner-title">
-              {state[selected_genera][random_num]["title"]}
-            </div>
-            <div className="banner-btn-container">
-              <BannerBtn text="play" />
-              <BannerBtn text="my list" />
-            </div>
-            <div className="banner-description">
-              {state[selected_genera][random_num]["overview"]}
+          <div>
+            <img
+              src={`${urls.base_imge_path}${state[selected_genera][random_num]["backdrop_path"]}`}
+              alt={state[selected_genera][random_num]["title"] + " img"}
+              className="banner-img"
+            />
+            <div className="overlay-text">
+              <div className="banner-title">
+                {state[selected_genera][random_num]["title"]}
+              </div>
+              <div className="banner-btn-container">
+                <BannerBtn text="play" />
+                <BannerBtn text="my list" />
+              </div>
+              <div className="banner-description">
+                {state[selected_genera][random_num]["overview"]}
+              </div>
             </div>
           </div>
         </div>

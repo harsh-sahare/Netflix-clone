@@ -1,16 +1,25 @@
-html{
+html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
-body{
+body {
     margin: 0px;
     overflow-x: hidden;
     padding: 0px;
-    background: black;
+    background: var(--backgroundColor);
+}
+
+.movies {
+    background-color: var(--backgroundColor);
+    position: relative;
+    z-index: 500;
 }
 
 
-::-webkit-scrollbar{
-display: none;
+
+
+
+::-webkit-scrollbar {
+    display: none;
 }

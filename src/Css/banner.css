@@ -2,53 +2,66 @@
   color: #fff;
   width: 100vw;
   align-items: center;
-  position: relative;
-  height: 100vh;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
 }
+
 .banner .background-img {
   height: 90%;
   width: 90%;
+  z-index: 80;
   margin: 5% auto;
-  background: linear-gradient(
-    90deg,
-    rgb(104, 104, 104),
-    #111,
-    rgb(104, 104, 104)
-  );
+  position: relative;
+  background: linear-gradient(90deg,
+      rgb(104, 104, 104),
+      #111,
+      rgb(104, 104, 104));
   background-size: 200%;
   animation: liner-grad linear 2s infinite alternate;
 }
+
 @keyframes liner-grad {
   0% {
     background-position: left;
   }
+
   100% {
     background-position: right;
   }
 }
-.banner::after {
+
+.banner>div {
+  position: relative;
+}
+
+.banner>div::after {
   content: "";
   position: absolute;
+  pointer-events: none;
+  top: 0px;
+  right: 0px;
+  left: 0px;
   bottom: 0px;
   background: linear-gradient(transparent, rgba(0, 0, 0));
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  z-index: 90;
 }
+
+
+
 .banner-img {
   width: 100vw;
   height: 100vh;
   object-fit: contain;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: relative;
   z-index: -2;
 }
 
 .overlay-text {
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: 60px;
+  z-index: 102;
   transform: translateY(-50%);
   max-width: 60vw;
 }
@@ -56,14 +69,17 @@
 .banner-text {
   z-index: 2;
 }
+
 .banner-title {
   font-size: 50px;
   color: #fff;
   font-weight: bolder;
 }
+
 .banner-btn-container {
   display: flex;
 }
+
 .banner-btn {
   color: #fff;
   padding: 0.5rem 2rem;
@@ -83,10 +99,12 @@
   transition: all 200ms;
   margin-left: 10px;
 }
+
 .banner-btn:hover {
   background: #e6e6e6;
   color: #000000;
 }
+
 .banner-description {
   width: 45rem;
   color: #fff;
@@ -95,6 +113,7 @@
   font-size: 1rem;
   max-width: 60%;
   height: 80px;
+  overflow: hidden;
   font-weight: 700;
 }
 
@@ -102,14 +121,17 @@
   .overlay-text {
     max-width: 80vw !important;
   }
+
   .banner-title {
     font-size: 40px;
   }
+
   .banner-description {
     font-size: 0.9rem;
     max-width: 100%;
   }
 }
+
 @media screen and (max-width: 444px) {
   .banner-title {
     font-size: 30px;
@@ -120,26 +142,32 @@
   .banner-img {
     left: 10px;
   }
+
   .overlay-text {
     left: 11px;
   }
 }
+
 @media screen and (max-width: 338px) {
   .banner-img {
     left: 19px;
   }
+
   .overlay-text {
     left: 20px;
   }
 }
+
 @media screen and (max-width: 320px) {
   .banner-img {
     left: 0px;
   }
+
   .overlay-text {
     left: 36px;
   }
 }
+
 @media screen and (max-width: 760px) {
   .overlay-text {
     overflow-y: auto;
