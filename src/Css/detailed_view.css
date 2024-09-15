@@ -1,0 +1,86 @@
+.detailed_section {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details_container {
+    padding: 20px;
+    width: 80vw;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.videoPlayer {
+    width: 100%;
+    grid-column: 2;
+}
+
+
+
+.videoPlayer>iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    border: 0px;
+}
+
+.details_container>.overlay {
+    width: 100%;
+    grid-column: 1;
+    height: 100%;
+}
+
+.movie_poster_and_name {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+}
+
+.movie_poster_and_name>img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.details_container>.overlay>.movie_poster_and_name>.details {
+    padding: 10px 20px;
+    color: black !important;
+    max-height: 430px;
+    overflow: scroll;
+}
+
+
+.details_container>.overlay>.movie_poster_and_name>.details>.movie_name {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: "Anton", sans-serif;
+    color: black;
+}
+
+
+.details_container>.overlay>.movie_poster_and_name>.details>.star_container>img {
+    aspect-ratio: 1/1;
+    width: 25px;
+}
+
+.details_container>.overlay>.movie_poster_and_name>.details>.rating_count {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+
+.details_container>.overlay>.description {
+    color: black;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px 10px 0px;
+}

@@ -77,6 +77,7 @@
 
 .card_img::before {
   content: "";
+  pointer-events: none;
   position: absolute;
   color: #ffffff;
   bottom: 0px;

@@ -1,4 +1,5 @@
 export const state = {
+  currentMovie: null,
   NetFlix_orignals: [],
   Trending: [],
   Top_rated: [],
@@ -7,6 +8,7 @@ export const state = {
   Horrer_movies: [],
   Romance_movies: [],
   Documentaries: [],
+  currentMovieTitle: null,
   movie_id: null,
   types_movies: [
     "NetFlix_orignals",
@@ -16,8 +18,8 @@ export const state = {
     "Comedy_movies",
     "Horrer_movies",
     "Romance_movies",
-    "Documentaries"
-  ]
+    "Documentaries",
+  ],
 };
 
 export default function reducer(state, action) {
@@ -25,43 +27,53 @@ export default function reducer(state, action) {
     case "SET_NETFLIX_ORIGNALS":
       return {
         ...state,
-        NetFlix_orignals: action.value
+        NetFlix_orignals: action.value,
       };
     case "SET_TRENDING":
       return {
         ...state,
-        Trending: action.value
+        Trending: action.value,
       };
     case "SET_ACTION_MOVIES":
       return {
         ...state,
-        Action_movies: action.value
+        Action_movies: action.value,
       };
     case "SET_COMEDY_MOVIES":
       return {
         ...state,
-        Comedy_movies: action.value
+        Comedy_movies: action.value,
       };
     case "SET_HORROR_MOVIES":
       return {
         ...state,
-        Horrer_movies: action.value
+        Horrer_movies: action.value,
       };
     case "SET_ROMANCE_MOVIES":
       return {
         ...state,
-        Romance_movies: action.value
+        Romance_movies: action.value,
       };
     case "SET_DOCUMENTARIES":
       return {
         ...state,
-        Documentaries: action.value
+        Documentaries: action.value,
       };
 
     case "SET_TOP_RATED":
       return {
         ...state,
-        Top_rated: action.value
+        Top_rated: action.value,
+      };
+    case "SET_CURRENT_MOVIE":
+      return {
+        ...state,
+        currentMovie: action.value,
+      };
+    case "SET_CURRENT_MOVIE_TITLE":
+      return {
+        ...state,
+        currentMovieTitle: action.value,
       };
     default:
       return state;
