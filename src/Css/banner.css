@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mingzat&family=Protest+Guerrilla&display=swap');
+
 .banner {
   color: #fff;
   width: 100vw;
@@ -5,6 +7,7 @@
   position: sticky;
   top: 0px;
   z-index: 100;
+  /* margin-bottom: -35vh; */
 }
 
 .banner .background-img {
@@ -51,7 +54,6 @@
 
 .banner-img {
   width: 100vw;
-  height: 100vh;
   object-fit: contain;
   position: relative;
   z-index: -2;
@@ -73,11 +75,17 @@
 .banner-title {
   font-size: 50px;
   color: #fff;
+  font-family: "Protest Guerrilla", 'Courier New', Courier, monospace;
   font-weight: bolder;
 }
 
 .banner-btn-container {
+  margin-top: 2rem;
   display: flex;
+}
+
+.banner-btn:nth-child(2) {
+  margin-left: 10px;
 }
 
 .banner-btn {
@@ -97,7 +105,6 @@
   border-radius: 5px;
   text-transform: capitalize;
   transition: all 200ms;
-  margin-left: 10px;
 }
 
 .banner-btn:hover {
@@ -109,12 +116,18 @@
   width: 45rem;
   color: #fff;
   line-height: 1.3;
-  padding-top: 1rem;
   font-size: 1rem;
   max-width: 60%;
   height: 80px;
   overflow: hidden;
-  font-weight: 700;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  margin-top: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 100;
 }
 
 @media screen and (max-width: 610px) {

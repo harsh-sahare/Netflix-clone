@@ -38,12 +38,12 @@ export default function Banner() {
               <div className="banner-title">
                 {state[selected_genera][random_num]["title"]}
               </div>
+              <div className="banner-description">
+                {state[selected_genera][random_num]["overview"]}
+              </div>
               <div className="banner-btn-container">
                 <BannerBtn text="play" />
                 <BannerBtn text="my list" />
-              </div>
-              <div className="banner-description">
-                {state[selected_genera][random_num]["overview"]}
               </div>
             </div>
           </div>
