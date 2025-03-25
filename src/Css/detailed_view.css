@@ -9,22 +9,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .details_container {
     padding: 20px;
-    width: 80vw;
+    width: 90vw;
+    max-height: 90vh;
     background-color: white;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    overflow-y: auto;
 }
 
 .videoPlayer {
     width: 100%;
     grid-column: 2;
 }
-
-
 
 .videoPlayer>iframe {
     width: 100%;
@@ -42,7 +43,6 @@
 .movie_poster_and_name {
     display: grid;
     grid-template-columns: 1fr 2fr;
-
 }
 
 .movie_poster_and_name>img {
@@ -54,9 +54,8 @@
     padding: 10px 20px;
     color: black !important;
     max-height: 430px;
-    overflow: scroll;
+    overflow-y: auto;
 }
-
 
 .details_container>.overlay>.movie_poster_and_name>.details>.movie_name {
     font-size: 25px;
@@ -64,7 +63,6 @@
     font-family: "Anton", sans-serif;
     color: black;
 }
-
 
 .details_container>.overlay>.movie_poster_and_name>.details>.star_container>img {
     aspect-ratio: 1/1;
@@ -77,10 +75,71 @@
     color: black;
 }
 
-
 .details_container>.overlay>.description {
     color: black;
     font-weight: 300;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px 20px 10px 0px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 992px) {
+    .details_container {
+        width: 95vw;
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .details_container>.overlay>.movie_poster_and_name>.details>.movie_name {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .details_container {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+        max-height: 85vh;
+    }
+
+    .videoPlayer {
+        grid-column: 1;
+        margin-bottom: 20px;
+    }
+
+    .details_container>.overlay {
+        grid-column: 1;
+    }
+
+    .movie_poster_and_name {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .details_container {
+        padding: 15px;
+        width: 100vw;
+    }
+
+    .movie_poster_and_name {
+        grid-template-columns: 1fr;
+    }
+
+    .movie_poster_and_name>img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .details_container>.overlay>.movie_poster_and_name>.details {
+        padding: 10px 0;
+    }
+
+    .details_container>.overlay>.movie_poster_and_name>.details>.movie_name {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .details_container>.overlay>.description {
+        padding: 10px 0;
+    }
 }
