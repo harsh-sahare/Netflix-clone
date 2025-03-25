@@ -113,6 +113,11 @@
     .movie_poster_and_name {
         grid-template-columns: 1fr 1.5fr;
     }
+
+    .movie_poster_and_name>img {
+        max-width: 150px;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -122,21 +127,23 @@
     }
 
     .movie_poster_and_name {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
     }
 
     .movie_poster_and_name>img {
-        max-width: 200px;
-        margin: 0 auto;
+        max-width: 120px;
+        width: 100%;
+        margin: 0;
     }
 
     .details_container>.overlay>.movie_poster_and_name>.details {
-        padding: 10px 0;
+        padding: 10px 0 10px 10px;
     }
 
     .details_container>.overlay>.movie_poster_and_name>.details>.movie_name {
-        font-size: 20px;
-        text-align: center;
+        font-size: 18px;
+        text-align: left;
     }
 
     .details_container>.overlay>.description {
